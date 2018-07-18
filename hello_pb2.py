@@ -19,21 +19,21 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='hello.proto',
   package='',
   syntax='proto3',
-  serialized_pb=_b('\n\x0bhello.proto\"\x15\n\x04Name\x12\r\n\x05value\x18\x01 \x01(\t2 \n\x05Hello\x12\x17\n\x05Hello\x12\x05.Name\x1a\x05.Name\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x0bhello.proto\"\x1d\n\x0cHelloRequest\x12\r\n\x05value\x18\x01 \x01(\t\"\x1e\n\rHelloResponse\x12\r\n\x05value\x18\x01 \x01(\t21\n\x05Hello\x12(\n\x05Hello\x12\r.HelloRequest\x1a\x0e.HelloResponse\"\x00\x62\x06proto3')
 )
 
 
 
 
-_NAME = _descriptor.Descriptor(
-  name='Name',
-  full_name='Name',
+_HELLOREQUEST = _descriptor.Descriptor(
+  name='HelloRequest',
+  full_name='HelloRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='Name.value', index=0,
+      name='value', full_name='HelloRequest.value', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -52,18 +52,57 @@ _NAME = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=15,
-  serialized_end=36,
+  serialized_end=44,
 )
 
-DESCRIPTOR.message_types_by_name['Name'] = _NAME
+
+_HELLORESPONSE = _descriptor.Descriptor(
+  name='HelloResponse',
+  full_name='HelloResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='HelloResponse.value', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=46,
+  serialized_end=76,
+)
+
+DESCRIPTOR.message_types_by_name['HelloRequest'] = _HELLOREQUEST
+DESCRIPTOR.message_types_by_name['HelloResponse'] = _HELLORESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Name = _reflection.GeneratedProtocolMessageType('Name', (_message.Message,), dict(
-  DESCRIPTOR = _NAME,
+HelloRequest = _reflection.GeneratedProtocolMessageType('HelloRequest', (_message.Message,), dict(
+  DESCRIPTOR = _HELLOREQUEST,
   __module__ = 'hello_pb2'
-  # @@protoc_insertion_point(class_scope:Name)
+  # @@protoc_insertion_point(class_scope:HelloRequest)
   ))
-_sym_db.RegisterMessage(Name)
+_sym_db.RegisterMessage(HelloRequest)
+
+HelloResponse = _reflection.GeneratedProtocolMessageType('HelloResponse', (_message.Message,), dict(
+  DESCRIPTOR = _HELLORESPONSE,
+  __module__ = 'hello_pb2'
+  # @@protoc_insertion_point(class_scope:HelloResponse)
+  ))
+_sym_db.RegisterMessage(HelloResponse)
 
 
 
@@ -73,16 +112,16 @@ _HELLO = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=38,
-  serialized_end=70,
+  serialized_start=78,
+  serialized_end=127,
   methods=[
   _descriptor.MethodDescriptor(
     name='Hello',
     full_name='Hello.Hello',
     index=0,
     containing_service=None,
-    input_type=_NAME,
-    output_type=_NAME,
+    input_type=_HELLOREQUEST,
+    output_type=_HELLORESPONSE,
     options=None,
   ),
 ])

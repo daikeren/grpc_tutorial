@@ -1,9 +1,13 @@
 syntax = "proto3";
 
-message Name {
+message HelloRequest {
+    string value = 1;
+}
+
+message HelloResponse {
     string value = 1;
 }
 
 service Hello {
-    rpc Hello(Name) returns (Name) {}
+    rpc Hello(HelloRequest) returns (HelloResponse) {}
 }

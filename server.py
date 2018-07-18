@@ -11,7 +11,7 @@ import hello
 class HelloServicer(hello_pb2_grpc.HelloServicer):
 
     def Hello(self, request, context):
-        response = hello_pb2.Name()
+        response = hello_pb2.HelloResponse()
         response.value = hello.hello(request.value)
         return response
 
